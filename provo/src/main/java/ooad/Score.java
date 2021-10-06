@@ -1,7 +1,5 @@
 package ooad;
 
-import java.util.ArrayList;
-
 public class Score {
     private int score;
     private int aantalGoed;

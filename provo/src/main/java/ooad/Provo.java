@@ -113,7 +113,6 @@ public class Provo {
 
                         loginCheck = user.loginCheck(usersArrayList, username, password);
                         if (loginCheck) {
-                            System.out.println("check");
                             loggedInUser = user.loginUser(usersArrayList, username, password);
                             screen = "menu";
                         }
@@ -164,24 +163,6 @@ public class Provo {
                     } else {
                         screen = "score";
                     }
-                    //System.out.println(quiz);
-
-                    //credits checken en verminderen
-
-                    //minst gespeelde quiz selecteren
-
-                    //timer starten
-
-                    //vragen van quiz laden
-
-                    //letters genereren
-
-                    //timer stoppen
-
-                    //score weergeven
-
-                    //terug naar het hoofdmenu
-
                 }
 
                 break;
@@ -202,24 +183,6 @@ public class Provo {
                     System.out.println("Congrats, your score is " + score.getScore());
                     score.resetAantalGoed();
                     screen = "menu";
-                    //System.out.println(quiz);
-
-                    //credits checken en verminderen
-
-                    //minst gespeelde quiz selecteren
-
-                    //timer starten
-
-                    //vragen van quiz laden
-
-                    //letters genereren
-
-                    //timer stoppen
-
-                    //score weergeven
-
-                    //terug naar het hoofdmenu
-
                 }
 
                 break;

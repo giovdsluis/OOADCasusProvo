@@ -17,8 +17,7 @@ public class Stopwatch {
 
     public void stop() {
         stopTime = System.currentTimeMillis();
-        System.out.println("StopWatch: " + getElapsedTime() + " milliseconds.");
-        System.out.println("StopWatch: " + getElapsedTimeSecs() + " seconds.");
+        System.out.println("You finished your test in " + getElapsedTimeSecs() + " seconds.");
         score.setAantalSeconde((int) getElapsedTime());
     }
 
