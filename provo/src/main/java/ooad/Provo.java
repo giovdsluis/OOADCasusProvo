@@ -53,8 +53,6 @@ public class Provo {
                                 screen = "play quiz";
                             } else if ("quit".equals(menuChoice)) {
                                 screen = "quit";
-                            } else if ("edit questions".equals(menuChoice) && loggedInUser.getDocent()) {
-                                screen = "edit questions";
                             }
                         }
                     } while (screen == "menu");
@@ -186,21 +184,6 @@ public class Provo {
                 }
 
                 break;
-
-                case "edit questions": {
-                    //keuze vraag toevoegen, vraag aanpassen, vraag verwijderen
-                    /*Vraag toevoegen:
-                     * type vraag kiezen
-                     * vraag invullen
-                     * antwoord(en) doorgeven
-                     * opslaan
-                     *
-                     * */
-                    System.out.println("=========================================");
-                    System.out.println("=            Edit questions             =");
-                    System.out.println("=========================================");
-
-                }
             }
         }
         while (provoRunning == true);

@@ -8,10 +8,10 @@ public class User {
     private boolean docent = false;
 
 
-    public User(String username, String password, boolean beheerder) {
+    public User(String username, String password, boolean docent) {
         this.username = username;
         this.password = password;
-        this.docent = beheerder;
+        this.docent = docent;
     }
 
     public boolean verifyUsername(ArrayList<User> allUsers, String name) {
