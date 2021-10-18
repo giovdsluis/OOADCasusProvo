@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class User {
     private String username;
     private String password;
-    private boolean beheerder = false;
+    private boolean docent = false;
 
 
     public User(String username, String password, boolean beheerder) {
         this.username = username;
         this.password = password;
-        this.beheerder = beheerder;
+        this.docent = beheerder;
     }
 
     public boolean verifyUsername(ArrayList<User> allUsers, String name) {
@@ -58,7 +58,7 @@ public class User {
         this.password = password;
     }
 
-    public boolean getBeheerder() {
-        return beheerder;
+    public boolean getDocent() {
+        return docent;
     }
 }

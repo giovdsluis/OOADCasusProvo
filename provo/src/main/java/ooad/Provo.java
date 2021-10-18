@@ -19,8 +19,8 @@ public class Provo {
         String screen = "menu";
         boolean provoRunning = true;
         User loggedInUser = null;
-        User beheerder = new User("beheerder", "123", true);
-        usersArrayList.add(beheerder);
+        User docent = new User("docent", "123", true);
+        usersArrayList.add(docent);
 
         do {
             switch (screen) {
@@ -53,7 +53,7 @@ public class Provo {
                                 screen = "play quiz";
                             } else if ("quit".equals(menuChoice)) {
                                 screen = "quit";
-                            } else if ("edit questions".equals(menuChoice) && loggedInUser.getBeheerder()) {
+                            } else if ("edit questions".equals(menuChoice) && loggedInUser.getDocent()) {
                                 screen = "edit questions";
                             }
                         }
