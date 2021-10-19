@@ -1,4 +1,4 @@
-package ooad;
+package ooad.oldcode;
 
 public class Score {
     private int score;
