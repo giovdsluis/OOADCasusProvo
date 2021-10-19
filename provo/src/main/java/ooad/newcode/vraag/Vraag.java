@@ -1,6 +1,6 @@
 package ooad.newcode.vraag;
 
-import ooad.newcode.vraag.antwoord.IAntwoord;
+import ooad.newcode.antwoord.IAntwoord;
 
 public abstract class Vraag {
     private String vraag;

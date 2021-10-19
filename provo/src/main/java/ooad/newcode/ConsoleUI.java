@@ -7,84 +7,82 @@ public class ConsoleUI {
     Scanner scanner;
     boolean provoRunning = true;
     boolean eindeKennistoets = false;
-    private String studentennaam;
+    String screen = "menu";
 
     public ConsoleUI(ProvoFacade provo) {
         this.provo = provo;
         this.scanner = new Scanner(System.in);
     }
 
-    public void start()  {
-        System.out.println("=========================================");
-        System.out.println("=               Main menu               =");
-        System.out.println("=========================================");
-        provo.getLokaal();
-        System.out.print("Wat wilt u doen?: \n" + "Aanmelden bij een kennistoets of verlaten? \n");
-        var gekozenUsecase = Integer.parseInt(scanner.nextLine());
-        do{
-            switch (gekozenUsecase) {
-                case 1:
+    public void start() {
+        do {
+            switch (screen) {
+                case "menu": {
+                    do {
+                        System.out.println("=========================================");
+                        System.out.println("=               Main menu               =");
+                        System.out.println("=========================================");
+                        System.out.println(provo.getLokaal());
+                        System.out.print("Wat wilt u doen?: \n" + "Aanmelden bij een kennistoets of verlaten? \n");
+                        String menuKeuze = scanner.nextLine();
+                        if ("aanmelden".equals(menuKeuze)) {
+                            screen = "aanmelden";
+                        } else if ("verlaten".equals(menuKeuze)) {
+                            screen = "verlaten";
+                        }
+                    } while (screen == "menu");
+                }
+                break;
+
+                case "aanmelden":
                     inloggen();
-                    gekozenUsecase = 3;
                     break;
-                case 2:
+
+                case "verlaten":
                     verlaten();
                     break;
-                case 3:
+
+                case "maken kennistoets":
                     maakKennistoets();
                     break;
             }
-            while(provoRunning);
         }
+        while (provoRunning);
     }
 
     private void inloggen() {
-        System.out.println("Aanmelden bij een kennistoets");
+        System.out.println("=========================================");
+        System.out.println("=               Aanmelden               =");
+        System.out.println("=========================================");
         System.out.print("Lokaal: ");
-        var lokaal = scanner.nextLine();
-        System.out.print("Studentennaam: ");
-        var studentennaam = scanner.nextLine();
-        provo.inloggen(lokaal, studentennaam);
-        System.out.println("U bent aangemeld \n \n");
-        start();
+        var lokaalScanner = scanner.nextLine();
+        var lokaal = provo.getLokaal();
+        if (lokaal.equals(lokaalScanner)) {
+            System.out.print("Studentennaam: ");
+            var studentennaam = scanner.nextLine();
+            provo.inloggen(lokaalScanner, studentennaam);
+            System.out.println("U bent aangemeld");
+            screen = "maken kennistoets";
+        } else {
+            System.out.println("Probeer het opnieuw");
+            screen = "aanmelden";
+        }
     }
 
     private void maakKennistoets() {
         System.out.println("=========================================");
         System.out.println("=             Kennistoets               =");
         System.out.println("=========================================");
-        while(!eindeKennistoets) {
+        provo.getKennistoets();
+        while (!eindeKennistoets) {
             var vraag = provo.getVolgendeVraag();
             System.out.println(vraag);
             var antwoord = scanner.nextLine();
-            provo.beantwoordVraag(studentennaam, antwoord);
+            provo.beantwoordVraag(vraag, antwoord);
         }
-        System.out.println("De quiz is afgelopen. Gefeliciteerd! je hebt een score van " + provo.getScore() + " punten behaald!\n\n");
+        System.out.println("Gefeliciteerd! je hebt een score van " + provo.getScore() + " punten behaald!");
+        screen = "verlaten";
     }
-
-//    private void voegQuizToe() {
-//        System.out.println("Quiz toevoegen");
-//        System.out.print("quiz naam: ");
-//        var quiznaam = scanner.nextLine();
-//        quebble.maakNieuweQuizAan(quiznaam);
-//        var alleVragen = quebble.getAlleVragen();
-//        for(int i = 0; i < alleVragen.size(); i++) {
-//            System.out.println(i + ": " + alleVragen.get(i).getVraag());
-//        }
-//        System.out.print("E: kies eerste 8 vragen \nI: kies 8 vragen op basis van 8 id's\n");
-//        var soortKeuze = scanner.nextLine();
-//        for(int i = 0; i < 8; i++) {
-//            if (soortKeuze.equals("E")) {
-//                quebble.voegVraagToeAanQuiz(quiznaam, alleVragen.get(i).getVraag());
-//            }
-//            if(soortKeuze.equals("I")) {
-//                var keuze = Integer.parseInt(scanner.nextLine());
-//                quebble.voegVraagToeAanQuiz(quiznaam, alleVragen.get(keuze).getVraag());
-//            }
-//        }
-//        System.out.println("Quiz aangemaakt \n \n");
-//        start();
-//    }
 
     public void verlaten() {
         provoRunning = false;

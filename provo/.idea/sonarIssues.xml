@@ -58,6 +58,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/App.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/BeantwoordeVraagFactory.java">
           <value>
             <set />
@@ -118,6 +123,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/antwoord/JuistOnjuistAntwoord.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/antwoord/KortAntwoord.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/antwoord/MeerkeuzeAntwoord.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/consoleUI.java">
           <value>
             <set />
@@ -128,7 +148,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/vraag/BeantwoordeVraag.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/vraag/BeantwoordeVraagFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/vraag/JuistOnjuistVraag.java">
           <value>
             <set />
           </value>
@@ -159,6 +189,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/vraag/antwoord/IAntwoord.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ooad/newcode/vraag/antwoord/JuistOnjuistAntwoord.java">
           <value>
             <set />
           </value>
@@ -214,6 +249,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../../Quebble/OoadCasus/src/main/java/nl/han/oose/ooad/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/code/Quebble-dev/src/main/java/com/github/maikhermens/quebble/Quebble.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/code/Quebble-dev/src/main/java/com/github/maikhermens/quebble/constants/VragenConstant.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/code/Quebble-dev/src/main/java/com/github/maikhermens/ui/ConsoleUI.java">
           <value>
             <set />
           </value>

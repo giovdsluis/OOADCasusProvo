@@ -1,4 +1,4 @@
-package ooad.newcode.vraag.antwoord;
+package ooad.newcode.antwoord;
 
 public interface IAntwoord {
 
