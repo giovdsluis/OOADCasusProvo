@@ -1,7 +1,8 @@
 package ooad.newcode.antwoord;
 
 public class JuistOnjuistAntwoord implements IAntwoord{
-    private final boolean antwoord;
+
+    private boolean antwoord;
 
     public JuistOnjuistAntwoord(boolean antwoord) {
         this.antwoord = antwoord;

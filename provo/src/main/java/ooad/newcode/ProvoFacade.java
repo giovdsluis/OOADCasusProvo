@@ -40,23 +40,9 @@ public class ProvoFacade {
         kennistoets.setAANTALVRAGEN(vragen.hardcodedVragen.size());
     }
 
-    public void beantwoordVraag(String vraag, String antwoordTekst) {
-        MeerkeuzeVraag meerkeuzeVraag = new MeerkeuzeVraag(vraag);
-        KortAntwoordVraag kortAntwoordVraag = new KortAntwoordVraag(vraag);
-        JuistOnjuistVraag juistOnjuistVraag = new JuistOnjuistVraag(vraag);
-        var huidigeVraag = vragen.hardcodedVragen.get(kennistoets.getHuidigeVraagID());
-        IAntwoord antwoord;
-
-        if (huidigeVraag.getClass().equals(MeerkeuzeVraag.class)) {
-            antwoord = new MeerkeuzeAntwoord(antwoordTekst.charAt(0));
-            System.out.println(meerkeuzeVraag.controleerAntwoord(antwoord));
-        } else if (huidigeVraag.getClass().equals(KortAntwoordVraag.class)){
-            antwoord = new KortAntwoord(antwoordTekst);
-            System.out.println(kortAntwoordVraag.controleerAntwoord(antwoord));
-        } else {
-            antwoord = new JuistOnjuistAntwoord(parseBoolean(antwoordTekst));
-            System.out.println(juistOnjuistVraag.controleerAntwoord(antwoord));
-        }
+    public void beantwoordVraag(String antwoord) {
+        kennistoets.beantwoordVraag(antwoord);
     }
+
 }
 

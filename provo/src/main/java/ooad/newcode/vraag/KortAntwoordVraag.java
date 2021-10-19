@@ -2,6 +2,7 @@ package ooad.newcode.vraag;
 
 import ooad.newcode.antwoord.IAntwoord;
 import ooad.newcode.antwoord.KortAntwoord;
+import ooad.newcode.antwoord.MeerkeuzeAntwoord;
 
 import java.util.List;
 

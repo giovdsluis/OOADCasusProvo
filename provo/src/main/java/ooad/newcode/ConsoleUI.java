@@ -78,7 +78,7 @@ public class ConsoleUI {
             var vraag = provo.getVolgendeVraag();
             System.out.println(vraag);
             var antwoord = scanner.nextLine();
-            provo.beantwoordVraag(vraag, antwoord);
+            provo.beantwoordVraag(antwoord);
         }
         System.out.println("Gefeliciteerd! je hebt een score van " + provo.getScore() + " punten behaald!");
         screen = "verlaten";
