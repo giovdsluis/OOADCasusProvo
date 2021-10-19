@@ -11,12 +11,14 @@ import java.util.List;
 public class Kennistoets {
     private int huidigeVraagID;
     private int AANTALVRAGEN;
+    private boolean eindeKennistoets;
     private Vragen vragen;
     private List<BeantwoordeVraag> beantwoordeVragen;
     private BeantwoordeVraagFactory beantwoordeVraagFactory;
 
     public Kennistoets() {
         huidigeVraagID = -1;
+        eindeKennistoets = false;
         vragen = new Vragen();
         beantwoordeVraagFactory = new BeantwoordeVraagFactory();
         beantwoordeVragen = new ArrayList<>();
@@ -24,6 +26,7 @@ public class Kennistoets {
 
     public String getVolgendeVraag() {
         if (huidigeVraagID >= AANTALVRAGEN-1) {
+            setEindeKennistoets(true);
             return "De quiz is afgelopen.";
         } else {
             setVolgendeVraagID();
@@ -51,6 +54,14 @@ public class Kennistoets {
 
     public int getAANTALVRAGEN() {
         return AANTALVRAGEN;
+    }
+
+    public boolean isEindeKennistoets() {
+        return eindeKennistoets;
+    }
+
+    public void setEindeKennistoets(boolean eindeKennistoets) {
+        this.eindeKennistoets = eindeKennistoets;
     }
 
     public void setAANTALVRAGEN(int AANTALVRAGEN) {

@@ -74,7 +74,7 @@ public class ConsoleUI {
         System.out.println("=             Kennistoets               =");
         System.out.println("=========================================");
         provo.getKennistoets();
-        while (!eindeKennistoets) {
+        while (!provo.isEindeKennistoets()) {
             var vraag = provo.getVolgendeVraag();
             System.out.println(vraag);
             var antwoord = scanner.nextLine();

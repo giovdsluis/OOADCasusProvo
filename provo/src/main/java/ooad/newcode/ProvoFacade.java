@@ -44,5 +44,9 @@ public class ProvoFacade {
         kennistoets.beantwoordVraag(antwoord);
     }
 
+    public boolean isEindeKennistoets(){
+        return kennistoets.isEindeKennistoets();
+    }
+
 }
 
