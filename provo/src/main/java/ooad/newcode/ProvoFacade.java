@@ -10,43 +10,49 @@ import ooad.newcode.vraag.*;
 import static java.lang.Boolean.parseBoolean;
 
 public class ProvoFacade {
-    public StudentenBeheerder studentenBeheerder;
-    public Kennistoets kennistoets;
+    private StudentenBeheerder studentenBeheerder;
+    private Kennistoets kennistoets;
     private Vragen vragen;
+    private Lokaal lokaal;
 
     public ProvoFacade() {
         studentenBeheerder = new StudentenBeheerder();
         kennistoets = new Kennistoets();
         vragen = new Vragen();
+        lokaal = new Lokaal();
     }
 
     public void inloggen(String lokaal, String studentennaam) {
         studentenBeheerder.inloggen(lokaal, studentennaam);
     }
 
-    public String getVolgendeVraag(){
+    public String getVolgendeVraag() {
         return kennistoets.getVolgendeVraag();
     }
 
     public int getScore() {
-        return 1;
+        return kennistoets.getScore();
     }
 
     public String getLokaal() {
-        return "1";
+        return lokaal.getLokaal();
     }
 
     public void getKennistoets() {
         kennistoets.setAANTALVRAGEN(vragen.hardcodedVragen.size());
+        kennistoets.startTimer();
     }
 
     public void beantwoordVraag(String antwoord) {
         kennistoets.beantwoordVraag(antwoord);
     }
 
-    public boolean isEindeKennistoets(){
+    public boolean isEindeKennistoets() {
         return kennistoets.isEindeKennistoets();
     }
 
+    public void setLokaal() {
+        lokaal.setLokaal();
+    }
 }
 

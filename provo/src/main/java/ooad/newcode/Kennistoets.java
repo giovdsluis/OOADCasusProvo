@@ -12,12 +12,14 @@ public class Kennistoets {
     private int huidigeVraagID;
     private int AANTALVRAGEN;
     private boolean eindeKennistoets;
+    private int score;
     private Vragen vragen;
     private List<BeantwoordeVraag> beantwoordeVragen;
     private BeantwoordeVraagFactory beantwoordeVraagFactory;
 
     public Kennistoets() {
         huidigeVraagID = -1;
+        score = 0;
         eindeKennistoets = false;
         vragen = new Vragen();
         beantwoordeVraagFactory = new BeantwoordeVraagFactory();
@@ -27,6 +29,7 @@ public class Kennistoets {
     public String getVolgendeVraag() {
         if (huidigeVraagID >= AANTALVRAGEN-1) {
             setEindeKennistoets(true);
+            stopTimer();
             return "De quiz is afgelopen. Druk op enter voor je score.";
         } else {
             setVolgendeVraagID();
@@ -38,6 +41,10 @@ public class Kennistoets {
     public void beantwoordVraag(String antwoordTekst) {
         var beantwoordeVraag = beantwoordeVraagFactory.createBeantwoordeVraag(antwoordTekst, this);
         beantwoordeVragen.add(beantwoordeVraag);
+    }
+
+    public int getScore(){
+        return beantwoordeVraagFactory.getScore();
     }
 
     public void setVolgendeVraagID(){
@@ -58,5 +65,12 @@ public class Kennistoets {
 
     public void setAANTALVRAGEN(int AANTALVRAGEN) {
         this.AANTALVRAGEN = AANTALVRAGEN;
+    }
+
+    public void startTimer() {
+        
+    }
+
+    public void stopTimer() {
     }
 }

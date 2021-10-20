@@ -18,11 +18,9 @@ public class BeantwoordeVraag {
         return vraag;
     }
 
-
     public boolean getIsGoedBeantwoord() {
         return isGoedBeantwoord;
     }
-
 
 }
 

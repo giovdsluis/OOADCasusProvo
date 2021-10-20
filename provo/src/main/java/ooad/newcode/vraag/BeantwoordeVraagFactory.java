@@ -10,9 +10,11 @@ import static java.lang.Boolean.parseBoolean;
 
 public class BeantwoordeVraagFactory {
     private Vragen vragen;
+    private int score;
 
     public BeantwoordeVraagFactory() {
         vragen = new Vragen();
+        score = 0;
     }
 
     public BeantwoordeVraag createBeantwoordeVraag(String antwoordTekst, Kennistoets kennistoets) {
@@ -27,6 +29,19 @@ public class BeantwoordeVraagFactory {
             antwoord = new JuistOnjuistAntwoord(parseBoolean(antwoordTekst));
         }
         var isGoedBeantwoord = huidigeVraag.controleerAntwoord(antwoord);
+
+        if(huidigeVraag.controleerAntwoord(antwoord) == true) {
+            setScore();
+        }
+
         return new BeantwoordeVraag(antwoord, isGoedBeantwoord, huidigeVraag);
+    }
+
+    public void setScore(){
+        score++;
+    }
+
+    public int getScore(){
+        return score;
     }
 }

@@ -22,7 +22,8 @@ public class ConsoleUI {
                         System.out.println("=========================================");
                         System.out.println("=               Main menu               =");
                         System.out.println("=========================================");
-                        System.out.println(provo.getLokaal());
+                        provo.setLokaal();
+                        System.out.println("Lokaal = " + provo.getLokaal());
                         System.out.print("Wat wilt u doen?: \n" + "Aanmelden bij een kennistoets of verlaten? \n");
                         String menuKeuze = scanner.nextLine();
                         if ("aanmelden".equals(menuKeuze)) {
