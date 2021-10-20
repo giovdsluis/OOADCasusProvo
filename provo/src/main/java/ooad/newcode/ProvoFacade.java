@@ -14,12 +14,14 @@ public class ProvoFacade {
     private Kennistoets kennistoets;
     private Vragen vragen;
     private Lokaal lokaal;
+    private Stopwatch stopwatch;
 
     public ProvoFacade() {
         studentenBeheerder = new StudentenBeheerder();
         kennistoets = new Kennistoets();
         vragen = new Vragen();
         lokaal = new Lokaal();
+        stopwatch = new Stopwatch();
     }
 
     public void inloggen(String lokaal, String studentennaam) {
@@ -40,7 +42,7 @@ public class ProvoFacade {
 
     public void getKennistoets() {
         kennistoets.setAANTALVRAGEN(vragen.hardcodedVragen.size());
-        kennistoets.startTimer();
+        stopwatch.start();
     }
 
     public void beantwoordVraag(String antwoord) {

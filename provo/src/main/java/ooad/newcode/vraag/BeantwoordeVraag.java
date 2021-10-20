@@ -13,15 +13,6 @@ public class BeantwoordeVraag {
         this.isGoedBeantwoord = isGoedBeantwoord;
         this.vraag = vraag;
     }
-
-    public Vraag getVraag() {
-        return vraag;
-    }
-
-    public boolean getIsGoedBeantwoord() {
-        return isGoedBeantwoord;
-    }
-
 }
 
 

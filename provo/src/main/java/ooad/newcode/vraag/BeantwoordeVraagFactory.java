@@ -14,7 +14,7 @@ public class BeantwoordeVraagFactory {
 
     public BeantwoordeVraagFactory() {
         vragen = new Vragen();
-        score = 0;
+        score = -1;
     }
 
     public BeantwoordeVraag createBeantwoordeVraag(String antwoordTekst, Kennistoets kennistoets) {
@@ -29,6 +29,7 @@ public class BeantwoordeVraagFactory {
             antwoord = new JuistOnjuistAntwoord(parseBoolean(antwoordTekst));
         }
         var isGoedBeantwoord = huidigeVraag.controleerAntwoord(antwoord);
+        System.out.println(huidigeVraag.controleerAntwoord(antwoord));
 
         if(huidigeVraag.controleerAntwoord(antwoord) == true) {
             setScore();
