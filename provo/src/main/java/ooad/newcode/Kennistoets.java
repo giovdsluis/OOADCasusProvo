@@ -27,7 +27,7 @@ public class Kennistoets {
     public String getVolgendeVraag() {
         if (huidigeVraagID >= AANTALVRAGEN-1) {
             setEindeKennistoets(true);
-            return "De quiz is afgelopen.";
+            return "De quiz is afgelopen. Druk op enter voor je score.";
         } else {
             setVolgendeVraagID();
             var vraagBeschrijving = vragen.hardcodedVragen.get(huidigeVraagID).getVraag();
@@ -46,14 +46,6 @@ public class Kennistoets {
 
     public int getHuidigeVraagID() {
         return huidigeVraagID;
-    }
-
-    public void setHuidigeVraagID(int huidigeVraagID) {
-        this.huidigeVraagID = huidigeVraagID;
-    }
-
-    public int getAANTALVRAGEN() {
-        return AANTALVRAGEN;
     }
 
     public boolean isEindeKennistoets() {
