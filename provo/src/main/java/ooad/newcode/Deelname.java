@@ -2,27 +2,27 @@ package ooad.newcode;
 
 import ooad.newcode.vraag.BeantwoordeVraag;
 import ooad.newcode.vraag.BeantwoordeVraagFactory;
-import ooad.newcode.vraag.Vragen;
+import ooad.newcode.vraag.KennistoetsVragen;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Kennistoets {
+public class Deelname {
     private int huidigeVraagID;
     private int AANTALVRAGEN;
     private boolean eindeKennistoets;
     private int score;
-    private Vragen vragen;
+    private KennistoetsVragen kennistoetsVragen;
     private List<BeantwoordeVraag> beantwoordeVragen;
     private BeantwoordeVraagFactory beantwoordeVraagFactory;
     private Stopwatch stopwatch;
 
-    public Kennistoets() {
+    public Deelname() {
         huidigeVraagID = -1;
         score = 0;
         eindeKennistoets = false;
-        vragen = new Vragen();
+        kennistoetsVragen = new KennistoetsVragen();
         beantwoordeVraagFactory = new BeantwoordeVraagFactory();
         stopwatch = new Stopwatch();
         beantwoordeVragen = new ArrayList<>();
@@ -35,7 +35,7 @@ public class Kennistoets {
             return "De quiz is afgelopen. Druk op enter voor je score.";
         } else {
             setVolgendeVraagID();
-            var vraagBeschrijving = vragen.hardcodedVragen.get(huidigeVraagID).getVraag();
+            var vraagBeschrijving = kennistoetsVragen.hardcodedVragen.get(huidigeVraagID).getVraag();
             return (getHuidigeVraagID() + 1) + ". " + vraagBeschrijving;
         }
     }
@@ -67,6 +67,7 @@ public class Kennistoets {
     }
 
     public void setAANTALVRAGEN(int AANTALVRAGEN) {
+        stopwatch.start();
         this.AANTALVRAGEN = AANTALVRAGEN;
     }
 

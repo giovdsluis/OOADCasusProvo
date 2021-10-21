@@ -3,13 +3,12 @@ package ooad.newcode;
 import java.util.Scanner;
 
 public class ConsoleUI {
-    private ProvoFacade provo;
+    private KennistoetsController provo;
     Scanner scanner;
     boolean provoRunning = true;
-    boolean eindeKennistoets = false;
     String screen = "menu";
 
-    public ConsoleUI(ProvoFacade provo) {
+    public ConsoleUI(KennistoetsController provo) {
         this.provo = provo;
         this.scanner = new Scanner(System.in);
     }

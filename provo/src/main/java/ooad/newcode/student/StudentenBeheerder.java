@@ -1,7 +1,5 @@
 package ooad.newcode.student;
 
-import ooad.newcode.student.Student;
-
 import java.util.ArrayList;
 
 public class StudentenBeheerder {

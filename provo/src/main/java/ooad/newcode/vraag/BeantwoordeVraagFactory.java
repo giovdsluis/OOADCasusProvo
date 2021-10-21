@@ -1,6 +1,6 @@
 package ooad.newcode.vraag;
 
-import ooad.newcode.Kennistoets;
+import ooad.newcode.Deelname;
 import ooad.newcode.antwoord.IAntwoord;
 import ooad.newcode.antwoord.JuistOnjuistAntwoord;
 import ooad.newcode.antwoord.KortAntwoord;
@@ -9,16 +9,16 @@ import ooad.newcode.antwoord.MeerkeuzeAntwoord;
 import static java.lang.Boolean.parseBoolean;
 
 public class BeantwoordeVraagFactory {
-    private Vragen vragen;
+    private KennistoetsVragen kennistoetsVragen;
     private int score;
 
     public BeantwoordeVraagFactory() {
-        vragen = new Vragen();
+        kennistoetsVragen = new KennistoetsVragen();
         score = -1;
     }
 
-    public BeantwoordeVraag createBeantwoordeVraag(String antwoordTekst, Kennistoets kennistoets) {
-        var huidigeVraag = vragen.hardcodedVragen.get(kennistoets.getHuidigeVraagID());
+    public BeantwoordeVraag createBeantwoordeVraag(String antwoordTekst, Deelname deelname) {
+        var huidigeVraag = kennistoetsVragen.hardcodedVragen.get(deelname.getHuidigeVraagID());
         IAntwoord antwoord;
 
         if (huidigeVraag.getClass().equals(MeerkeuzeVraag.class)) {

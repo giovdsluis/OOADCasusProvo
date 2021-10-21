@@ -6,7 +6,7 @@ import ooad.newcode.antwoord.MeerkeuzeAntwoord;
 
 import java.util.List;
 
-public class Vragen {
+public class KennistoetsVragen {
 
     static final public List<Vraag> hardcodedVragen = List.of(
             new MeerkeuzeVraag("Welke van de begrippen need, features en requirements horne bij het solution domain? \n " +

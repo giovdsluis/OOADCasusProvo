@@ -1,27 +1,19 @@
 package ooad.newcode;
 
-import ooad.newcode.antwoord.IAntwoord;
-import ooad.newcode.antwoord.JuistOnjuistAntwoord;
-import ooad.newcode.antwoord.KortAntwoord;
-import ooad.newcode.antwoord.MeerkeuzeAntwoord;
 import ooad.newcode.student.StudentenBeheerder;
 import ooad.newcode.vraag.*;
 
-import static java.lang.Boolean.parseBoolean;
-
-public class ProvoFacade {
+public class KennistoetsController {
     private StudentenBeheerder studentenBeheerder;
-    private Kennistoets kennistoets;
-    private Vragen vragen;
+    private Deelname deelname;
+    private KennistoetsVragen kennistoetsVragen;
     private Lokaal lokaal;
-    private Stopwatch stopwatch;
 
-    public ProvoFacade() {
+    public KennistoetsController() {
         studentenBeheerder = new StudentenBeheerder();
-        kennistoets = new Kennistoets();
-        vragen = new Vragen();
+        deelname = new Deelname();
+        kennistoetsVragen = new KennistoetsVragen();
         lokaal = new Lokaal();
-        stopwatch = new Stopwatch();
     }
 
     public void inloggen(String lokaal, String studentennaam) {
@@ -29,11 +21,11 @@ public class ProvoFacade {
     }
 
     public String getVolgendeVraag() {
-        return kennistoets.getVolgendeVraag();
+        return deelname.getVolgendeVraag();
     }
 
     public int getScore() {
-        return kennistoets.getScore();
+        return deelname.getScore();
     }
 
     public String getLokaal() {
@@ -41,16 +33,15 @@ public class ProvoFacade {
     }
 
     public void getKennistoets() {
-        kennistoets.setAANTALVRAGEN(vragen.hardcodedVragen.size());
-        stopwatch.start();
+        deelname.setAANTALVRAGEN(kennistoetsVragen.hardcodedVragen.size());
     }
 
     public void beantwoordVraag(String antwoord) {
-        kennistoets.beantwoordVraag(antwoord);
+        deelname.beantwoordVraag(antwoord);
     }
 
     public boolean isEindeKennistoets() {
-        return kennistoets.isEindeKennistoets();
+        return deelname.isEindeKennistoets();
     }
 
     public void setLokaal() {

@@ -9,7 +9,6 @@ public abstract class Vraag {
         this.vraag = vraag;
     }
 
-
     public abstract boolean controleerAntwoord(IAntwoord antwoord);
 
     public String getVraag() {

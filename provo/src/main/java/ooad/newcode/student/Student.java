@@ -1,6 +1,11 @@
 package ooad.newcode.student;
 
 public class Student {
-    public Student(Object p0, Object p1) {
+    private String lokaal;
+    private String studentennaam;
+
+    public Student(String lokaal, String studentennaam) {
+        this.lokaal = lokaal;
+        this.studentennaam = studentennaam;
     }
 }
