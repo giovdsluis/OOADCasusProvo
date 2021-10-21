@@ -46,7 +46,6 @@ public class Deelname {
     }
 
     public int getScore(){
-        System.out.println(beantwoordeVraagFactory.getScore());
         return (beantwoordeVraagFactory.getScore() * (600 / stopwatch.getTijd()));
     }
 

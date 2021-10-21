@@ -16,8 +16,8 @@ public class KennistoetsController {
         lokaal = new Lokaal();
     }
 
-    public void inloggen(String lokaal, String studentennaam) {
-        studentenBeheerder.inloggen(lokaal, studentennaam);
+    public void aanmeldenBijLokaal(String lokaal, String studentennaam) {
+        studentenBeheerder.aanmeldenBijLokaal(lokaal, studentennaam);
     }
 
     public String getVolgendeVraag() {

@@ -29,7 +29,7 @@ public class BeantwoordeVraagFactory {
             antwoord = new JuistOnjuistAntwoord(parseBoolean(antwoordTekst));
         }
         var isGoedBeantwoord = huidigeVraag.controleerAntwoord(antwoord);
-        System.out.println(huidigeVraag.controleerAntwoord(antwoord));
+
 
         if(huidigeVraag.controleerAntwoord(antwoord) == true) {
             setScore();

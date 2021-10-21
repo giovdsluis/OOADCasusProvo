@@ -60,7 +60,7 @@ public class ConsoleUI {
         if (lokaal.equals(lokaalScanner)) {
             System.out.print("Studentennaam: ");
             var studentennaam = scanner.nextLine();
-            provo.inloggen(lokaalScanner, studentennaam);
+            provo.aanmeldenBijLokaal(lokaalScanner, studentennaam);
             System.out.println("U bent aangemeld");
             screen = "maken kennistoets";
         } else {
