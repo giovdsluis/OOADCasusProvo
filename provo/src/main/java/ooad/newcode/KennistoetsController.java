@@ -29,7 +29,7 @@ public class KennistoetsController {
     }
 
     public String getLokaal() {
-        return lokaal.getLokaal();
+        return lokaal.getLokaalNummer();
     }
 
     public void getKennistoets() {

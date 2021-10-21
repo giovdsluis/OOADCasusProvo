@@ -3,19 +3,19 @@ package ooad.newcode;
 public class Lokaal {
     private int minimum;
     private int maximum;
-    private int lokaal;
+    private int lokaalNummer;
 
     public Lokaal(){
         minimum = 1;
         maximum = 99;
     }
 
-    public String getLokaal() {
-        return String.valueOf(lokaal);
+    public String getLokaalNummer() {
+        return String.valueOf(lokaalNummer);
     }
 
     public void setLokaal() {
-        lokaal = minimum + (int)(Math.random() * ((maximum - minimum) + 1));
+        lokaalNummer = minimum + (int)(Math.random() * ((maximum - minimum) + 1));
     }
 
 }
